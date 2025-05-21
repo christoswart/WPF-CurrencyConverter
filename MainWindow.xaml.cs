@@ -160,8 +160,8 @@ namespace CurrencyConverter
             {
                 //Calculation for currency converter is From Currency value multiply(*) 
                 //With the amount textbox value and then that total divided(/) with To Currency value
-                ConvertedValue = (double.Parse(cmbToCurrency.SelectedValue.ToString()) * double.Parse(txtCurrency.Text)) / double.Parse(cmbFromCurrency.SelectedValue.ToString());
-
+                ConvertedValue = ConversionHelper.Convert(double.Parse(txtCurrency.Text), double.Parse(cmbFromCurrency.SelectedValue.ToString()), (double.Parse(cmbToCurrency.SelectedValue.ToString())));
+                
                 //Show the label converted currency and converted currency name.
                 lblCurrency.Content = cmbToCurrency.Text + " " + ConvertedValue.ToString("N3");
             }
